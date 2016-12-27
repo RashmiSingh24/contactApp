@@ -1,12 +1,6 @@
 'use strict';
 
-/*var PersonCtrl = angular.module('addressBookApp', []);
 
-PersonCtrl.controller('PersonCtrl',['$scope', '$routeParams',
-	function($scope, $routeParams){
-		$scope.personName = "Brij Mohan";
-	}]);
-*/
 
 (function () {
     var addressBookApp = angular.module("addressBookApp");

@@ -18,8 +18,8 @@ Contact Details
 	<tbody>
 		<tr ng-repeat="person in persons">
 			<td><a ng-href="#/person/{{person._id}}">{{person.name}}</a></td>
-			<td>{{person.type}}</td>
-			<td>{{person.number}}</td>
+			<td>{{person.phonenumber.type}}</td>
+			<td>{{person.phonenumber.number}}</td>
 			<td><button ng-click="searchPerson(person._id);" data-toggle="modal" data-target="#personEditModal" class="btn btn-info btn-sm">Edit</button></td>
 			<td><button ng-click="deletePerson(person._id);" class="btn btn-info btn-sm">Delete</button></td>
 		</tr>
@@ -46,11 +46,11 @@ Contact Details
 		  </div>
 		  <div class="form-group">
 		    <label for="txtType">Type</label>
-		    <input type="name" class="form-control" id="txtType" ng-model='person.type' placeholder="Enter Phone Number Type">
+		    <input type="name" class="form-control" id="txtType" ng-model='person.phonenumber.type' placeholder="Enter Phone Number Type">
 		  </div>
 		  <div class="form-group">
 		    <label for="txtPhone">Phone</label>
-		    <input type="phone" class="form-control" id="txtPhone" ng-model='person.number' placeholder="Enter Phone">
+		    <input type="phone" class="form-control" id="txtPhone" ng-model='person.phonenumber.number' placeholder="Enter Phone">
 		  </div>
 		  <center><button type="submit" class="btn btn-default" data-ng-click="addPerson(person);"  data-dismiss="modal">Submit</button><center>
 		</form>
@@ -78,11 +78,11 @@ Contact Details
 		  </div>
 		  <div class="form-group">
 		    <label for="txtType">Type</label>
-		    <input type="name" class="form-control" id="txtType" ng-model='person.type' placeholder="Update Phone Type">
+		    <input type="name" class="form-control" id="txtType" ng-model='person.phonenumber.type' placeholder="Update Phone Type">
 		  </div>
 		  <div class="form-group">
 		    <label for="txtPhone">Phone</label>
-		    <input type="phone" class="form-control" id="txtPhone" ng-model='person.number' placeholder="Update Phone">
+		    <input type="phone" class="form-control" id="txtPhone" ng-model='person.phonenumber.number' placeholder="Update Phone">
 		  </div>
 		  <button type="submit" class="btn btn-default"  data-ng-click="updatePerson(person);" data-dismiss="modal">Submit</button>
 		</form>

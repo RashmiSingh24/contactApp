@@ -42,15 +42,15 @@ app.delete('/deletePerson/:id', function(req, res){
 
 app.put('/updatePerson', function(req, res){
 	console.log("Received updatePerson request");
-	console.log(""+req.body.type);
+	console.log(""+req.body.phonenumber.type);
 	db.Persons.findAndModify({query: {"_id": new mongojs.ObjectId(req.body._id)},
-										update: {$set: {name: req.body.name, type: req.body.type, number: req.body.number}}
+										update: {$set: {name: req.body.name, phonenumber:{type: req.body.phonenumber.type, number: req.body.phonenumber.number}}}
 										}, function(err, docs){
 											console.log(docs);
 											res.json(docs);
 										})
 	});
 
-//app.use(express.static(__dirname + "/app/views"));
+
 app.listen(3000);
 console.log("server running on port 3000");
